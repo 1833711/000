@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>高级备忘录</title>
+    <link rel="stylesheet" href="js/libs/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="js/libs/jquery-ui.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <style>
+        #datepicker{
+            width: 96px;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <h1>1111年00月00日 &#X3000;星期几</h1>
+    <div id="radio">
+        <input type="radio" id="radio1" name="radio"><label for="radio1">昨天</label>
+        <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">今天</label>
+        <input type="radio" id="radio3" name="radio"><label for="radio3">明天</label>
+        <input type="radio" id="radio4" name="radio"><label for="radio4">后天</label>
+        <input type="radio" id="radio5" name="radio"><label for="radio5">大后天</label>
+        <input type="radio" id="radio6" name="radio"><label for="radio6">日历</label>
+    </div>
+    </header>
+    <!--展示任务的区域-->
+    <section>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+    <!--添加、删除任务的区域-->
+    <footer>
+        <span class="fa fa-plus-circle fa-3x"></span>
+        <div id="editBox">
+            <input type="text" required=""/>
+            <button>提交</button>
+        </div>
+    </footer>
+</main>
+
+</body>
+<!--采用requirejs模块化，设置入口js文件-->
+<script src="js/libs/require.js" data-main="js/index"></script>
+<script id="list" type="text/html">
+{{each arr as item}}
+     <li>
+         <span>{{item.content}}</span>
+         <input type="checkbox" id="{{item.id}}" {{item.complete?'checked':''}}/>
+         <label for="{{item.id}}"></label>
+     </li>
+    {{/each}}
+</script>
+
+<!--<script src="js/libs/jquery.js"></script>-->
+<!--<script src="js/libs/jquery-ui.js"></script>-->
+<!--<script>-->
+   <!--$(function(){-->
+        <!--$( "#radio" ).buttonset();-->
+    <!--})-->
+<!--</script>-->
+<!--<script>-->
+    <!--$(function() {-->
+        <!--$( "#datepicker" ).datepicker();-->
+        <!--$( "#tabs" ).tabs();-->
+
+        <!--$('#tabs ul li input').addEventListener('change',calc())-->
+        <!--function calc(){-->
+            <!--var time = new Date($('#tabs ul li input').val())-->
+<!--//            var time = new Date()-->
+            <!--console.log(time)-->
+            <!--var year = time.getFullYear()-->
+            <!--var month = time.getMonth() +1-->
+            <!--var date = time.getDate()-->
+            <!--var week = time.getDay()-->
+            <!--var array = ['日','一','二','三','四','五','六']-->
+            <!--$('.current').html('<h2>'+year+'年'+month+'月'+date+'日&nbsp;星期'+array[week]+'</h2>')-->
+            <!--$('#tabs ul li').each(function(){-->
+                <!--$(this).click(function(){-->
+                    <!--var n = $(this).index()-->
+                    <!--$('.current').html('<h2>'+year+'年'+month+'月'+(date+(n-1) )+'日&nbsp;星期'+array[week+(n-1)]+'</h2>')-->
+                <!--})-->
+            <!--})-->
+        <!--}-->
+
+
+        <!--console.log($('#tabs ul li input').val())-->
+    <!--});-->
+<!--</script>-->
+</html>

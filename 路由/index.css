@@ -1,0 +1,26 @@
+nav{
+    height:64px;
+    background: darkslategray;
+    text-align: center;
+}
+nav a{
+    float:left;
+    width:33.3%;
+    line-height: 64px;
+}
+main{
+    height: calc(100% - 64px);
+    width:100%;
+    position:relative;
+}
+section{
+    width:100%;
+    /*height:100%*/
+    position:absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+section:nth-child(1){
+    display:block;
+}
